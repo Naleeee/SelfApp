@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "AwesomeProject",
-    "slug": "AwesomeProject",
+    "name": "SelfApp",
+    "slug": "SelfApp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
