@@ -46,3 +46,19 @@ export const blueTheme = {
   id: 'blue',
 };
 
+export const theme = {
+  darkGrey: '#3D404D',
+  lightGrey: '#6D707E',
+  black: '#E7EFFF',
+  yellow: '#D4A418',
+}
+
+const Colors =
+{
+AQUA_GREEN: '#1A5276',
+RED: '#B03A2E',
+ORANGE: '#DC7633',
+PURPLE: '#8E44AD',
+GRAY: '#566573',
+}
+export default theme;
