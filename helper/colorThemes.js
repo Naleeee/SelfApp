@@ -47,18 +47,11 @@ export const blueTheme = {
 };
 
 export const theme = {
-  darkGrey: '#3D404D',
-  lightGrey: '#6D707E',
-  black: '#E7EFFF',
-  yellow: '#D4A418',
+  darkBlue: '#3A657E',
+  lightBlue: '#9BAEBC',
+  darkRed: '#79566C',
+  lightRed: '#B9A6B2',
+  black: '#374955'
 }
 
-const Colors =
-{
-AQUA_GREEN: '#1A5276',
-RED: '#B03A2E',
-ORANGE: '#DC7633',
-PURPLE: '#8E44AD',
-GRAY: '#566573',
-}
 export default theme;

@@ -10,6 +10,8 @@ import HomeScreen from './components/pages/Home'
 import ProjectScreen from './components/pages/Project'
 import ContactScreen from './components/pages/Contact'
 
+import theme from './helper/colorThemes.js';
+
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -36,9 +38,9 @@ export default function App() {
             // You can return any component that you like here!
             return <Icon name={iconName} size={size} color={color} />
           },
-          tabBarActiveTintColor: 'tomato',
-          tabBarInactiveTintColor: 'gray',
-              tabBarStyle: {backgroundColor: "black"},
+          tabBarActiveTintColor: theme.darkRed,
+          tabBarInactiveTintColor: theme.black,
+              tabBarStyle: {backgroundColor: theme.lightBlue},
           headerShown: false,
         })}
       >
