@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, Image, TouchableOpacity, View } from "react-native";
+
 import theme from './../../helper/colorThemes.js';
 
 export default function ContactScreen() {
