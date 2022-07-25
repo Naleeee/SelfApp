@@ -1,14 +1,36 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, Image, TouchableOpacity, ScrollView, View, Dimensions } from "react-native";
-import { SelectMultipleGroupButton } from "react-native-selectmultiple-button";
+// import { SelectMultipleGroupButton } from "react-native-selectmultiple-button";
+import { NavigationContainer } from '@react-navigation/native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 import theme from './../../helper/colorThemes.js';
 
 import Music from './../InterestPages/Music.js'
 import Modeling from './../InterestPages/Modeling.js'
 import VideoGames from './../InterestPages/VideoGames.js'
+import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
+const Tab = createMaterialTopTabNavigator();
+
+const myColor= (route) => {
+  switch (route.name) {
+    case 'Music':
+      return "green";
+    default:
+      break;
+  }
+}
+
+function TopBar() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={Music} />
+      <Tab.Screen name="Settings" component={Modeling} />
+    </Tab.Navigator>
+  );
+};
 
 export default function InterestScreen() {
   return (
@@ -34,76 +56,22 @@ export default function InterestScreen() {
         </View>
       </View>
 
-      {/* Main Page*/}
-      <View style={{ flex: 7, justifyContent: 'flex-start', alignItems: 'center', backgroundColor: theme.darkBlue}}>
-        <SelectMultipleGroupButton
-            multiple={false}
-            group={[
-              { value: "MUSIC" },
-              { value: "MODELING" },
-              { value: "VIDEO GAMES" },
-            ]}
-            defaultSelectedIndexes={[0]}
-            singleTap={valueTap => {
-              switch (valueTap) {
-                case "MUSIC":
-                  this.state.usageScrollView.scrollTo({
-                    x: 0 * SCREEN_WIDTH,
-                    y: 0,
-                    animated: true
-                  });
-                  break;
-                case "MODELING":
-                  this.state.usageScrollView.scrollTo({
-                    x: 1 * SCREEN_WIDTH,
-                    y: 0,
-                    animated: true
-                  });
-                  break;
-                case "VIDEO GAMES":
-                  // this.state.usageScrollView.scrollTo({
-                    // x: 2 * SCREEN_WIDTH,
-                    // y: 0,
-                    // animated: true
-                  // });
-                  break;
-                default:
-                  break;
-              }
-            }}
-          buttonViewStyle={{ flex: 1, marginTop: 0, margin: 10, borderRadius: 20 }}
-            highLightStyle={{
-              borderColor: theme.darkRed,
-              textColor: theme.darkRed,
-              backgroundColor: theme.lightRed,
-              borderTintColor: theme.darkRed,
-              textTintColor: theme.lightRed,
-              backgroundTintColor: theme.darkRed
-            }}
-          />
-        <ScrollView
-          // ref={ref => (this.state.usageScrollView = ref)}
-          pagingEnabled={true}
-          scrollEnabled={false}
-          horizontal={true}
-        >
-          <ScrollView
-            style={styles.horizontalView}
-            contentContainerStyle={styles.contentStyle}
-          >
-            <Music />
-          </ScrollView>
-          <ScrollView
-            style={styles.horizontalView}
-            contentContainerStyle={styles.contentStyle}
-          >
-            <Modeling />
-          </ScrollView>
-          <ScrollView style={styles.horizontalView}>
-            <VideoGames/>
-          </ScrollView>
-        </ScrollView>
-      </View>
+      <Tab.Navigator
+        initialRouteName={'Music'}
+        screenOptions={({route}) => ({
+          tabBarActiveTintColor: theme.darkRed,
+          tabBarInactiveTintColor: theme.darkBlue,
+          tabBarStyle: {
+            backgroundColor: theme.lightRed,
+            marginTop: 0,
+            margin: 10,
+            borderRadius: 20
+          }
+        })} style={{ flex: 7, backgroundColor: theme.darkBlue}}>
+        <Tab.Screen name="Music" component={Music} />
+        <Tab.Screen name="Modeling" component={Modeling} />
+        <Tab.Screen name="Video Games" component={VideoGames} />
+      </Tab.Navigator>
     </View>
   );
 }

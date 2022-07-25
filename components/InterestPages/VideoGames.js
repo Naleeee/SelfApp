@@ -1,9 +1,25 @@
-import { Text, View } from "react-native";
+import { Text, Image, View, Dimensions } from "react-native";
 
-export default function VideoGames() {
+import theme from './../../helper/colorThemes.js';
+
+const SCREEN_WIDTH = Dimensions.get("window").width;
+const SCREEN_HEIGHT = Dimensions.get("window").height;
+
+export default function Music() {
   return (
-    <View>
-      <Text>video games</Text>
+    <View style={{ flex: 1, backgroundColor: theme.darkBlue, alignItems: 'center', justifyContent: 'center'}}>
+         <Image
+            source={require('../../assets/Logo/Overwatch.png')}
+           style={{ flex: 1, width: SCREEN_WIDTH / 20 * 18 }}
+          />
+         <Image
+            source={require('../../assets/Logo/DeadByDaylight.png')}
+           style={{ flex: 1, width: SCREEN_WIDTH / 20 * 18 }}
+          />
+         <Image
+            source={require('../../assets/Logo/SeaOfThieves.png')}
+           style={{ flex: 1, width: SCREEN_WIDTH / 20 * 18 }}
+          />
     </View>
   );
 }
