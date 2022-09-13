@@ -1,25 +1,29 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, Image, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Switch, Text, Image, TouchableOpacity, View } from "react-native";
 
 import theme from './../../helper/colorThemes.js';
 
-export default function ContactScreen() {
+export default function InterestScreen() {
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   return (
     <View style={[styles.container, {
       flexDirection: "column"
     }]}>
-      <View style={{ flex: 3, backgroundColor: theme.darkBlue, flexDirection: "row"}}>
-        <View style={{ justifyContent: 'center', alignItems: 'center', paddingTop: 40, flex: 1, flexDirection: "row"}}>
-          <Image
-            source={require('../../assets/portrait.png')}
-            style={{ width: 80, height: 80 }}
-          />
+      <View style={{ flex: 1, backgroundColor: theme.black, flexDirection: "row"}}>
+        <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 30, flex: 1, flexDirection: "row"}}>
+                <Switch
+        trackColor={{ false: "#767577", true: "#81b0ff" }}
+        thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+        ios_backgroundColor="#3e3e3e"
+        onValueChange={toggleSwitch}
+        value={isEnabled}
+      />
         </View>
         <View style={{ paddingTop: 50, flex: 2, justifyContent: 'center', alignItems: 'center', flexDirection: "column"}}>
-          <Text style={[styles.text, {}]}>Nathan</Text>
-          <Text style={[styles.text, {fontWeight: 'bold'}]}>LEMALE</Text>
+          <Text style={[styles.text, {}]}>Contact</Text>
         </View>
-        <View style={{ justifyContent: 'center', alignItems: 'flex-start', paddingTop: 60, flex: 1, flexDirection: "row"}}>
+        <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 30, flex: 1, flexDirection: "row"}}>
           <Image
             source={require('../../assets/french.png')}
             style={{ width: 40, height: 40 }}
