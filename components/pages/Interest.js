@@ -63,15 +63,15 @@ export default function InterestScreen() {
       <Tab.Navigator
         initialRouteName={'Music'}
         screenOptions={({route}) => ({
-          tabBarActiveTintColor: theme.darkRed,
-          tabBarInactiveTintColor: theme.darkBlue,
+          tabBarActiveTintColor: theme.grey,
+          tabBarInactiveTintColor: theme.black,
           tabBarStyle: {
-            backgroundColor: theme.lightRed,
+            backgroundColor: theme.darkBlue,
             marginTop: 0,
             margin: 10,
             borderRadius: 20
           }
-        })} style={{ flex: 7, backgroundColor: theme.darkBlue}}>
+        })} style={{ flex: 7, backgroundColor: theme.black}}>
         <Tab.Screen name="Music" component={Music} />
         <Tab.Screen name="Modeling" component={Modeling} />
         <Tab.Screen name="Video Games" component={VideoGames} />
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   text: {
-    color: 'white',
+    color: theme.grey,
     fontSize: 20,
     textAlign: 'center',
   }

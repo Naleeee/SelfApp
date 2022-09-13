@@ -32,7 +32,7 @@ export default function InterestScreen() {
       </View>
 
       {/* Main Page*/}
-      <View style={{ flex: 7, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.darkBlue}}>
+      <View style={{ flex: 7, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.black}}>
       </View>
     </View>
   );
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   text: {
-    color: 'white',
+    color: theme.grey,
     fontSize: 20,
     textAlign: 'center',
   }

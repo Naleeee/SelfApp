@@ -32,7 +32,7 @@ export default function ContactScreen() {
       </View>
 
       {/* Main Page*/}
-      <View style={{ flex: 7, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.darkBlue}}>
+      <View style={{ flex: 7, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.black}}>
         <View style={[styles.section, { flex: 1, justifyContent: 'center', alignItems: 'center'}]}>
           <Text style={[styles.textSection, {}]}>French student at Epitech Bordeaux, skillfull, social and hardworker</Text>
         </View>
@@ -55,19 +55,19 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   text: {
-    color: 'white',
+    color: theme.grey,
     fontSize: 20,
     textAlign: 'center',
   },
   section: {
-    backgroundColor: theme.lightBlue,
-    margin: 20,
+    backgroundColor: theme.darkBlue,
+    margin: 30,
     borderRadius: 15,
     borderWidth: 1,
     borderRadius: 15, 
   },
   textSection: {
-    color: theme.black,
+    color: theme.grey,
     paddingVertical: 10,
     paddingHorizontal: 15,
     fontSize: 20,

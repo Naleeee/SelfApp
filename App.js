@@ -38,9 +38,9 @@ export default function App() {
             // You can return any component that you like here!
             return <Icon name={iconName} size={size} color={color} />
           },
-          tabBarActiveTintColor: theme.darkRed,
-          tabBarInactiveTintColor: theme.black,
-              tabBarStyle: {backgroundColor: theme.lightBlue},
+          tabBarActiveTintColor: theme.darkBrown,
+          tabBarInactiveTintColor: theme.grey,
+              tabBarStyle: {backgroundColor: theme.darkBlue},
           headerShown: false,
         })}
       >

@@ -33,7 +33,7 @@ export default function InterestScreen() {
       </View>
 
       {/* Main Page*/}
-      <View style={{ flex: 7, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.darkBlue, flexDirection: "row"}}>
+      <View style={{ flex: 7, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.black, flexDirection: "row"}}>
         <View style={[styles.column, { flex: 1, flexDirection: "column"}]}>
           <ImageBackground source={require('../../assets/Projects/Bomberman.png')} resizeMode="cover" style={styles.backImg}>
             <TouchableOpacity
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   text: {
-    color: 'white',
+    color: theme.grey,
     fontSize: 20,
     textAlign: 'center',
   },
@@ -90,7 +90,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     margin: 10,
-    color: 'white',
     fontSize: 20,
     textAlign: 'center',
   },

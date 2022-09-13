@@ -47,11 +47,14 @@ export const blueTheme = {
 };
 
 export const theme = {
-  darkBlue: '#3A657E',
   lightBlue: '#9BAEBC',
   darkRed: '#79566C',
   lightRed: '#B9A6B2',
-  black: '#374955'
+  black: '#111216',
+  darkBlue: '#424656',
+  grey: '#A6ABBD',
+  darkBrown: '#2F2511',
+  brown: '#5F523C',
 }
 
 export default theme;

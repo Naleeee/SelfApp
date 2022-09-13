@@ -7,7 +7,7 @@ const SCREEN_HEIGHT = Dimensions.get("window").height;
 
 export default function Music() {
   return (
-    <View style={{ flex: 1, backgroundColor: theme.darkBlue, alignItems: 'center', justifyContent: 'center'}}>
+    <View style={{ flex: 1, backgroundColor: theme.black, alignItems: 'center', justifyContent: 'center'}}>
          <Image
             source={require('../../assets/Logo/AutoDeskFusion360.png')}
            style={{ flex: 1, width: SCREEN_WIDTH / 20 * 18 }}
