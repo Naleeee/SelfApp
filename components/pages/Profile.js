@@ -29,6 +29,18 @@ export default function ContactScreen() {
 
       {/* Main Page*/}
       <View style={{ flex: 7, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.darkBlue}}>
+        <View style={[styles.section, { flex: 1, justifyContent: 'center', alignItems: 'center'}]}>
+          <Text style={[styles.textSection, {}]}>French student at Epitech Bordeaux, skillfull, social and hardworker</Text>
+        </View>
+        <View style={[styles.section, { flex: 1, justifyContent: 'center', alignItems: 'center'}]}>
+          <Text style={[styles.textSection, {}]}>Baccalaureate Scientific
+          First Cambridge of English (FCE)</Text>
+        </View>
+        <View style={[styles.section, { flex: 1, justifyContent: 'center', alignItems: 'center'}]}>
+          <Text style={[styles.textSection, {}]}>Third Year Student at Epitech
+            GPA: 3.26/4
+          </Text>
+        </View>
       </View>
     </View>
   );
@@ -40,6 +52,20 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'white',
+    fontSize: 20,
+    textAlign: 'center',
+  },
+  section: {
+    backgroundColor: theme.lightBlue,
+    margin: 20,
+    borderRadius: 15,
+    borderWidth: 1,
+    borderRadius: 15, 
+  },
+  textSection: {
+    color: theme.black,
+    paddingVertical: 10,
+    paddingHorizontal: 15,
     fontSize: 20,
     textAlign: 'center',
   }
