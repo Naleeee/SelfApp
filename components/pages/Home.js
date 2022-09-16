@@ -8,7 +8,7 @@ export default function ContactScreen() {
     <View style={[styles.container, {
       flexDirection: "column"
     }]}>
-      <View style={{ flex: 3, backgroundColor: theme.black, flexDirection: "row"}}>
+      <View style={{ flex: 3, backgroundColor: theme.white, flexDirection: "row"}}>
         <View style={{ justifyContent: 'center', alignItems: 'flex-start', paddingTop: 40, flex: 1, flexDirection: "row"}}>
         </View>
         <View style={{ paddingTop: 50, flex: 2, justifyContent: 'center', alignItems: 'flex-end', flexDirection: "column"}}>
@@ -24,7 +24,7 @@ export default function ContactScreen() {
           />
         </View>
       </View>
-      <View style={{ flex: 7, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.black}}>
+      <View style={{ flex: 7, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.white}}>
         <Text style={[styles.text, {}]}>Hello There !</Text>
         <Text style={[styles.text, {}]}></Text>
         <Text style={[styles.text, {}]}>My name is <Text style={{fontWeight: 'bold'}}>Nathan</Text>, i'm a french 19yo developer !</Text>
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   text: {
-    color: theme.grey,
+    color: theme.shark,
     fontSize: 20,
     textAlign: 'center',
   }

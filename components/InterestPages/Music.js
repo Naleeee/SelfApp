@@ -21,18 +21,18 @@ const SCREEN_HEIGHT = Dimensions.get("window").height;
 
 export default function Music() {
   return (
-    <View style={{ flex: 1, backgroundColor: theme.black, alignItems: 'center', justifyContent: 'center'}}>
+    <View style={{ flex: 1, backgroundColor: theme.white, alignItems: 'center', justifyContent: 'center'}}>
          <Image
             source={require('../../assets/Logo/TwentyOnePilots.png')}
-           style={{ flex: 1, width: SCREEN_WIDTH / 20 * 18 }}
+           style={{ flex: 1, width: SCREEN_WIDTH / 20 * 18, resizeMode: 'contain' }}
           />
          <Image
             source={require('../../assets/Logo/DaftPunk.png')}
-           style={{ flex: 1, width: SCREEN_WIDTH / 20 * 18 }}
+           style={{ flex: 1, width: SCREEN_WIDTH / 20 * 18, resizeMode: 'contain' }}
           />
          <Image
             source={require('../../assets/Logo/PanicAtTheDisco.png')}
-           style={{ flex: 1, width: SCREEN_WIDTH / 20 * 18 }}
+           style={{ flex: 1, width: SCREEN_WIDTH / 20 * 18, resizeMode: 'contain' }}
           />
     </View>
   );

@@ -47,6 +47,14 @@ export const blueTheme = {
 };
 
 export const theme = {
+  yale: '#064786',
+  air: '#5E97B7',
+  uranian: '#C1E6FF',
+  spanish: '#FFBEBE',
+  granny: '#A8EC99',
+  white: '#FFFFFF',
+  crayola: '#FFF7AC',
+  shark: '#29292E',
   lightBlue: '#9BAEBC',
   darkRed: '#79566C',
   lightRed: '#B9A6B2',

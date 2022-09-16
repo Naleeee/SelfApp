@@ -39,7 +39,7 @@ export default function InterestScreen() {
     <View style={[styles.container, {
       flexDirection: "column"
     }]}>
-      <View style={{ flex: 1, backgroundColor: theme.black, flexDirection: "row"}}>
+      <View style={{ flex: 1, backgroundColor: theme.white, flexDirection: "row"}}>
         <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 30, flex: 1, flexDirection: "row"}}>
           <Switch
             trackColor={{ false: "#767577", true: "#81b0ff" }}
@@ -63,15 +63,15 @@ export default function InterestScreen() {
       <Tab.Navigator
         initialRouteName={'Music'}
         screenOptions={({route}) => ({
-          tabBarActiveTintColor: theme.grey,
-          tabBarInactiveTintColor: theme.black,
+          tabBarActiveTintColor: theme.yale,
+          tabBarInactiveTintColor: theme.air,
           tabBarStyle: {
-            backgroundColor: theme.darkBlue,
+            backgroundColor: theme.uranian,
             marginTop: 0,
             margin: 10,
             borderRadius: 20
           }
-        })} style={{ flex: 7, backgroundColor: theme.black}}>
+        })} style={{ flex: 7, backgroundColor: theme.white}}>
         <Tab.Screen name="Music" component={Music} />
         <Tab.Screen name="Modeling" component={Modeling} />
         <Tab.Screen name="Video Games" component={VideoGames} />
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   text: {
-    color: theme.grey,
+    color: theme.yale,
     fontSize: 20,
     textAlign: 'center',
   }

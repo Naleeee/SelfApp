@@ -11,7 +11,7 @@ export default function InterestScreen() {
     <View style={[styles.container, {
       flexDirection: "column"
     }]}>
-      <View style={{ flex: 1, backgroundColor: theme.black, flexDirection: "row"}}>
+      <View style={{ flex: 1, backgroundColor: theme.white, flexDirection: "row"}}>
         <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 30, flex: 1, flexDirection: "row"}}>
           <Switch
             trackColor={{ false: "#767577", true: "#81b0ff" }}
@@ -33,40 +33,40 @@ export default function InterestScreen() {
       </View>
 
       {/* Main Page*/}
-      <View style={{ flex: 7, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.black, flexDirection: "row"}}>
+      <View style={{ flex: 7, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.white, flexDirection: "row"}}>
         <View style={[styles.column, { flex: 1, flexDirection: "column"}]}>
-          <ImageBackground source={require('../../assets/Projects/Bomberman.png')} resizeMode="cover" style={styles.backImg}>
-            <TouchableOpacity
-              style={styles.btnImg}>
-              <Text style={styles.textImg}>Bomberman</Text>
-            </TouchableOpacity>
-          </ImageBackground>
-          <ImageBackground source={require('../../assets/Projects/Arcade.png')} resizeMode="cover" style={styles.backImg}>
-            <TouchableOpacity
-              style={styles.btnImg}>
-              <Text style={styles.textImg}>Arcade</Text>
-            </TouchableOpacity>
-          </ImageBackground>
-          <ImageBackground source={require('../../assets/Projects/RPG.png')} resizeMode="cover" style={styles.backImg}>
-            <TouchableOpacity
-              style={styles.btnImg}>
-              <Text style={styles.textImg}>RPG</Text>
-            </TouchableOpacity>
-          </ImageBackground>
+          <TouchableOpacity
+            style={styles.backImg}>
+            <ImageBackground source={require('../../assets/Projects/Bomberman.png')} resizeMode="contain" style={styles.btnImg}>
+            </ImageBackground>
+            <Text style={styles.textImg}>Bomberman</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.backImg}>
+            <ImageBackground source={require('../../assets/Projects/Arcade.png')} resizeMode="contain" style={styles.btnImg}>
+            </ImageBackground>
+            <Text style={styles.textImg}>Arcade Game</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.backImg}>
+            <ImageBackground source={require('../../assets/Projects/Defender.png')} resizeMode="contain" style={styles.btnImg}>
+            </ImageBackground>
+            <Text style={styles.textImg}>Tower Defense</Text>
+          </TouchableOpacity>
         </View>
         <View style={[styles.column, { flex: 1, flexDirection: "column"}]}>
-          <ImageBackground source={require('../../assets/Projects/Plazza.png')} resizeMode="cover" style={styles.backImg}>
-            <TouchableOpacity
-              style={styles.btnImg}>
-              <Text style={styles.textImg}>Plazza</Text>
-            </TouchableOpacity>
-          </ImageBackground>
-          <ImageBackground source={require('../../assets/Projects/Defender.png')} resizeMode="cover" style={styles.backImg}>
-            <TouchableOpacity
-              style={styles.btnImg}>
-              <Text style={styles.textImg}>Defender</Text>
-            </TouchableOpacity>
-          </ImageBackground>
+          <TouchableOpacity
+            style={styles.backImg}>
+            <ImageBackground source={require('../../assets/Projects/Plazza.png')} resizeMode="contain" style={styles.btnImg}>
+            </ImageBackground>
+            <Text style={styles.textImg}>Plazza</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.backImg}>
+            <ImageBackground source={require('../../assets/Projects/RPG.png')} resizeMode="contain" style={styles.btnImg}>
+            </ImageBackground>
+            <Text style={styles.textImg}>RPG Jojo</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   text: {
-    color: theme.grey,
+    color: theme.yale,
     fontSize: 20,
     textAlign: 'center',
   },
@@ -99,10 +99,11 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     opacity: 0.5,
-    backgroundColor: 'grey',
+    backgroundColor: theme.white,
+    elevation: 5,
   },
   textImg: {
-    color: 'white',
+    color: theme.shark,
     fontSize: 20,
     textAlign: 'center',
   }
