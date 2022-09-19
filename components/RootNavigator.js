@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import TabNavigator from './TabNavigator';
 
-export default function RootNavigator() {
+export default function NavBar() {
   return (
     <NavigationContainer>
       <TabNavigator />

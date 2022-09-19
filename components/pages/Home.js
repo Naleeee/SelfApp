@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, Image, TouchableOpacity, View } from "react-native";
+import { useLanguage } from './../../provider/LanguageProvider';
 
 import theme from './../../helper/colorThemes.js';
 
 export default function ContactScreen() {
+
+  const { language, ChangeLanguage, getLanguage } = useLanguage();
+
   return (
     <View style={[styles.container, {
       flexDirection: "column"
@@ -17,15 +21,18 @@ export default function ContactScreen() {
             style={{ width: 200, height: 200, borderRadius: 40, marginBottom: 10 }}
           />
         </View>
-        <View style={{ justifyContent: 'center', alignItems: 'flex-start', paddingTop: 60, flex: 1, flexDirection: "row"}}>
-          <Image
-            source={require('../../assets/french.png')}
-            style={{ width: 40, height: 40 }}
-          />
+        <View style={styles.switchContainer}>
+          <TouchableOpacity style={styles.flagImageButton} onPress={() => ChangeLanguage("fr")}>
+            <Image source={require('../../assets/french.png')} style={[styles.flagImage, language.id !== "fr" ? { opacity: 0.5 } : {}]} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.flagImageButton} onPress={() => ChangeLanguage("en")}>
+            <Image source={require('../../assets/english.png')} style={[styles.flagImage, language.id !== "en" ? { opacity: 0.5 } : {}]} />
+          </TouchableOpacity>
         </View>
+
       </View>
       <View style={{ flex: 7, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.white}}>
-        <Text style={[styles.text, {}]}>Hello There !</Text>
+        <Text style={[styles.text, {}]}>{ language.intro }</Text>
         <Text style={[styles.text, {}]}></Text>
         <Text style={[styles.text, {}]}>My name is <Text style={{fontWeight: 'bold'}}>Nathan</Text>, i'm a french 19yo developer !</Text>
         <Text style={[styles.text, {}]}></Text>
@@ -48,6 +55,27 @@ const styles = StyleSheet.create({
     color: theme.shark,
     fontSize: 20,
     textAlign: 'center',
+  },
+  translate: {
+    width: 40,
+    height: 40,
+    resizeMode: 'contain',
+  },
+  switchContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+    flexDirection: 'row',
+  },
+  flagImageButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+    flexDirection: 'row',
+  },
+  flagImage: {
+    resizeMode: 'contain',
+    flex: 0.7,
   }
 });
 
