@@ -1,12 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, Image, TouchableOpacity, View } from "react-native";
 import { useLanguage } from './../../provider/LanguageProvider';
 
 import theme from './../../helper/colorThemes.js';
 
-export default function ContactScreen() {
+const FRENCH_FLAG = require('../../assets/french.png');
+const ENGLISH_FLAG = require('../../assets/english.png');
 
-  const { language, ChangeLanguage, getLanguage } = useLanguage();
+export default function HomeScreen() {
+
+  const { language, ChangeLanguage } = useLanguage();
+
+  const [flag, setFlag] = useState(language.id === "fr" ? FRENCH_FLAG : ENGLISH_FLAG);
+
+  function langue() {
+    console.log("Before " + language.id);
+    if (language.id === "fr") {
+      console.log("English");
+      ChangeLanguage("en");
+      setFlag(ENGLISH_FLAG);
+    } else {
+      console.log("Français");
+      ChangeLanguage("fr");
+      setFlag(FRENCH_FLAG);
+    }
+    console.log("After " + language.id);
+  }
 
   return (
     <View style={[styles.container, {
@@ -22,16 +41,14 @@ export default function ContactScreen() {
           />
         </View>
         <View style={styles.switchContainer}>
-          <TouchableOpacity style={styles.flagImageButton} onPress={() => ChangeLanguage("fr")}>
-            <Image source={require('../../assets/french.png')} style={[styles.flagImage, language.id !== "fr" ? { opacity: 0.5 } : {}]} />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.flagImageButton} onPress={() => ChangeLanguage("en")}>
-            <Image source={require('../../assets/english.png')} style={[styles.flagImage, language.id !== "en" ? { opacity: 0.5 } : {}]} />
+          <TouchableOpacity style={styles.flagImageButton} onPress={() => langue()}>
+            <Image source={flag} style={[styles.flagImage]} />
           </TouchableOpacity>
         </View>
 
       </View>
       <View style={{ flex: 7, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.white}}>
+        <Blink text='coucou' />
         <Text style={[styles.text, {}]}>{ language.intro }</Text>
         <Text style={[styles.text, {}]}></Text>
         <Text style={[styles.text, {}]}>My name is <Text style={{fontWeight: 'bold'}}>Nathan</Text>, i'm a french 19yo developer !</Text>
@@ -46,6 +63,25 @@ export default function ContactScreen() {
 
   );
 }
+
+const Blink = (props) => {
+  const [isShowingText, setIsShowingText] = useState(true);
+
+   useEffect(() => {
+     const toggle = setInterval(() => {
+       setIsShowingText(!isShowingText);
+     }, 1000);
+
+     return () => clearInterval(toggle);
+  })
+
+  if (!isShowingText) {
+    return null;
+  }
+
+  return <Text>{props.text}</Text>;
+}
+
 
 const styles = StyleSheet.create({
   container: {

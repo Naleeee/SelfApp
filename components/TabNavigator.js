@@ -2,10 +2,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons'
 
 import InterestScreen from '../components/pages/Interest'
-import ProfileScreen from '../components/pages/Profile'
-import HomeScreen from '../components/pages/Home'
 import ProjectScreen from '../components/pages/Project'
+import HomeScreen from '../components/pages/Home'
 import ContactScreen from '../components/pages/Contact'
+import SettingsScreen from '../components/pages/Settings'
 
 import theme from '../helper/colorThemes.js';
 
@@ -20,14 +20,14 @@ export default function TabNavigator() {
           let iconName;
           if (route.name === 'Interest') {
             iconName = focused ?  'ios-musical-notes' : 'ios-musical-notes-outline';
-          } else if (route.name === 'Profile') {
-            iconName = focused ?  'ios-person' : 'ios-person-outline';
-          } else if (route.name === 'Home') {
-            iconName = focused ?  'ios-home' : 'ios-home-outline';
           } else if (route.name === 'Project') {
             iconName = focused ?  'ios-code-slash' : 'ios-code-outline';
+          } else if (route.name === 'Home') {
+            iconName = focused ?  'ios-home' : 'ios-home-outline';
           } else if (route.name === 'Contact') {
             iconName = focused ?  'ios-call' : 'ios-call-outline';
+          } else if (route.name === 'Settings') {
+            iconName = focused ?  'ios-settings' : 'ios-settings-outline';
           }
           return <Icon name={iconName} size={size} color={color} />
         },
@@ -38,10 +38,10 @@ export default function TabNavigator() {
       })}
     >
       <Tab.Screen name="Interest" component={InterestScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
-      <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Project" component={ProjectScreen} />
+      <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Contact" component={ContactScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
   );
 };

@@ -40,23 +40,8 @@ export default function InterestScreen() {
       flexDirection: "column"
     }]}>
       <View style={{ flex: 1, backgroundColor: theme.white, flexDirection: "row"}}>
-        <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 30, flex: 1, flexDirection: "row"}}>
-          <Switch
-            trackColor={{ false: "#767577", true: "#81b0ff" }}
-            thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
-            ios_backgroundColor="#3e3e3e"
-            onValueChange={toggleSwitch}
-            value={isEnabled}
-          />
-        </View>
         <View style={{ paddingTop: 50, flex: 2, justifyContent: 'center', alignItems: 'center', flexDirection: "column"}}>
           <Text style={[styles.text, {}]}>Interests</Text>
-        </View>
-        <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 30, flex: 1, flexDirection: "row"}}>
-          <Image
-            source={require('../../assets/french.png')}
-            style={{ width: 40, height: 40 }}
-          />
         </View>
       </View>
 
