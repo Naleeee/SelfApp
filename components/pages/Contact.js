@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import { StyleSheet, Switch, Text, Image, TouchableOpacity, View } from "react-native";
+import { useLanguage } from './../../provider/LanguageProvider';
 
 import theme from './../../helper/colorThemes.js';
 
 export default function ContactScreen() {
-  const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
+  const { language, ChangeLanguage } = useLanguage();
+
   return (
     <View style={[styles.container, {
       flexDirection: "column"
     }]}>
       <View style={{ flex: 1, backgroundColor: theme.white, flexDirection: "row"}}>
         <View style={{ paddingTop: 50, flex: 2, justifyContent: 'center', alignItems: 'center', flexDirection: "column"}}>
-          <Text style={[styles.text, {}]}>Contact</Text>
+          <Text style={[styles.text, {}]}>{ language.contact }</Text>
         </View>
       </View>
 
@@ -24,13 +26,13 @@ export default function ContactScreen() {
             style={{ alignItems: 'center', width: 200, height: 200, borderRadius: 40, marginBottom: 10 }}
           />
           <Text style={[styles.text, {}]}>Nathan LEMALE</Text>
-          <Text style={[styles.text, {}]}>19 yo</Text>
+          <Text style={[styles.text, {}]}>{ language.age }</Text>
         </View>
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.white, flexDirection: "row", marginTop: 10 }}>
           <View style={[styles.column, { flex: 1, flexDirection: "column", justifyContent: 'center'}]}>
             <Text style={[styles.sectionText, {}]}>Email</Text>
-            <Text style={[styles.sectionText, {}]}>Phone</Text>
-            <Text style={[styles.sectionText, {}]}>Address</Text>
+            <Text style={[styles.sectionText, {}]}>{ language.phone }</Text>
+            <Text style={[styles.sectionText, {}]}>{ language.address}</Text>
           </View>
           <View style={[styles.column, { flex: 1, flexDirection: "column", justifyContent: 'center'}]}>
           <Text style={[styles.dataText, { marginTop: 20, marginBottom: 20 }]}>nthn.lemale@gmail.com</Text>

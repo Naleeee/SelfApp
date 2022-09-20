@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { StyleSheet, ImageBackground, Switch, Text, Image, TouchableOpacity, View } from "react-native";
+import { useLanguage } from './../../provider/LanguageProvider';
 
 import theme from './../../helper/colorThemes.js';
-const image = { uri: "https://reactjs.org/logo-og.png" };
 
 export default function ProjectScreen() {
-  const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
+  const { language, ChangeLanguage } = useLanguage();
+
   return (
     <View style={[styles.container, {
       flexDirection: "column"
     }]}>
       <View style={{ flex: 1, backgroundColor: theme.white, flexDirection: "row"}}>
         <View style={{ paddingTop: 50, flex: 2, justifyContent: 'center', alignItems: 'center', flexDirection: "column"}}>
-          <Text style={[styles.text, {}]}>Projetcs</Text>
+          <Text style={[styles.text, {}]}>{ language.projects }</Text>
         </View>
       </View>
 
@@ -24,19 +25,19 @@ export default function ProjectScreen() {
             style={styles.backImg}>
             <ImageBackground source={require('../../assets/Projects/Bomberman.png')} resizeMode="contain" style={styles.btnImg}>
             </ImageBackground>
-            <Text style={styles.textImg}>Bomberman</Text>
+            <Text style={styles.textImg}>{ language.bomberman }</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.backImg}>
             <ImageBackground source={require('../../assets/Projects/Arcade.png')} resizeMode="contain" style={styles.btnImg}>
             </ImageBackground>
-            <Text style={styles.textImg}>Arcade Game</Text>
+            <Text style={styles.textImg}>{ language.arcade }</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.backImg}>
             <ImageBackground source={require('../../assets/Projects/Defender.png')} resizeMode="contain" style={styles.btnImg}>
             </ImageBackground>
-            <Text style={styles.textImg}>Tower Defense</Text>
+            <Text style={styles.textImg}>{ language.defender }</Text>
           </TouchableOpacity>
         </View>
         <View style={[styles.column, { flex: 1, flexDirection: "column"}]}>
@@ -44,13 +45,13 @@ export default function ProjectScreen() {
             style={styles.backImg}>
             <ImageBackground source={require('../../assets/Projects/Plazza.png')} resizeMode="contain" style={styles.btnImg}>
             </ImageBackground>
-            <Text style={styles.textImg}>Plazza</Text>
+            <Text style={styles.textImg}>{ language.plazza }</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.backImg}>
             <ImageBackground source={require('../../assets/Projects/RPG.png')} resizeMode="contain" style={styles.btnImg}>
             </ImageBackground>
-            <Text style={styles.textImg}>RPG Jojo</Text>
+            <Text style={styles.textImg}>{ language.rpg }</Text>
           </TouchableOpacity>
         </View>
       </View>

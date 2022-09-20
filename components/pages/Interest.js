@@ -1,38 +1,21 @@
 import React, { useState } from "react";
-import { StyleSheet, Switch, Text, Image, TouchableOpacity, ScrollView, View, Dimensions } from "react-native";
-// import { SelectMultipleGroupButton } from "react-native-selectmultiple-button";
+import { StyleSheet, Text, Image, View } from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { useLanguage } from './../../provider/LanguageProvider';
 
 import theme from './../../helper/colorThemes.js';
 
 import Music from './../InterestPages/Music.js'
 import Modeling from './../InterestPages/Modeling.js'
 import VideoGames from './../InterestPages/VideoGames.js'
-import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 
-const SCREEN_WIDTH = Dimensions.get("window").width;
 const Tab = createMaterialTopTabNavigator();
 
-const myColor= (route) => {
-  switch (route.name) {
-    case 'Music':
-      return "green";
-    default:
-      break;
-  }
-}
-
-function TopBar() {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={Music} />
-      <Tab.Screen name="Settings" component={Modeling} />
-    </Tab.Navigator>
-  );
-};
-
 export default function InterestScreen() {
+
+  const { language, ChangeLanguage } = useLanguage();
+
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   return (
@@ -41,12 +24,12 @@ export default function InterestScreen() {
     }]}>
       <View style={{ flex: 1, backgroundColor: theme.white, flexDirection: "row"}}>
         <View style={{ paddingTop: 50, flex: 2, justifyContent: 'center', alignItems: 'center', flexDirection: "column"}}>
-          <Text style={[styles.text, {}]}>Interests</Text>
+          <Text style={[styles.text, {}]}>{ language.interest }</Text>
         </View>
       </View>
 
       <Tab.Navigator
-        initialRouteName={'Music'}
+        initialRouteName={ language.music }
         screenOptions={({route}) => ({
           tabBarActiveTintColor: theme.yale,
           tabBarInactiveTintColor: theme.air,
@@ -57,9 +40,9 @@ export default function InterestScreen() {
             borderRadius: 20
           }
         })} style={{ flex: 7, backgroundColor: theme.white}}>
-        <Tab.Screen name="Music" component={Music} />
-        <Tab.Screen name="Modeling" component={Modeling} />
-        <Tab.Screen name="Video Games" component={VideoGames} />
+        <Tab.Screen name={ language.music } component={Music} />
+        <Tab.Screen name={ language.modeling } component={Modeling} />
+        <Tab.Screen name={ language.games } component={VideoGames} />
       </Tab.Navigator>
     </View>
   );

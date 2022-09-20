@@ -27,7 +27,6 @@ const LanguageProvider = ({ children }) => {
   }, []);
 
   function ChangeLanguage(newLanguage) {
-    console.log("New Data to set = " + newLanguage);
     switch(newLanguage) {
       case "fr":
         setLanguage(french);
@@ -38,9 +37,7 @@ const LanguageProvider = ({ children }) => {
       default:
         break;
     }
-    console.log("New Data to set = " + newLanguage);
     setStorageValue("usedLanguage", newLanguage);
-    console.log("New Data to set = " + newLanguage);
   }
 
   return (
